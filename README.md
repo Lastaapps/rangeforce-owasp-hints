@@ -63,3 +63,28 @@ just ask you friends.
 - You can use python requests library to do the request, check for status code 200.
 - It should take about 20s to find the right session cookie.
 
+## 3: Injection
+### Command Injection
+- See prerequisites first. This one is really trivial.
+- On Unix systems `;` can be used to separate commands.
+- See `ping` man page and command usage. What is always the last part of the command?
+- `destination` is the last parameter - the place to do the injection.
+- Command to create files on Linux is `touch`.
+
+### Template Injection
+- Open the web and locate field that returns/processes something.
+- It's the shipping field.
+- Try editing the URL part with the search query. Input some random data and see the error message. Try to guess the language the server is written in.
+- Web seems to be written using Python.
+- One of the most common Python template library is Jinja2.
+- Search on the web for Jinja2 template injection.
+- [Possible solution, not the best one](https://kleiber.me/blog/2021/10/31/python-flask-jinja2-ssti-example/).
+
+### Second-Order SQL Injection
+- See prerequisites first.
+- Try to play with `;` while creating account and login in.
+- You can discover that SQL injection is hidden inside the `username` field.
+- Construct the `union select` query showing the data.
+- What is a possible name of table with data about *users*? What can be the column name for *password*s?
+- It depends on the order and number of columns selected.
+
