@@ -111,10 +111,22 @@ Good luck and have fun.
 
 ### HTTP Request Smuggling
 - Read on the net what it actually is.
-- [Blog](https://kleiber.me/blog/2021/10/31/python-flask-jinja2-ssti-example/)
+- [Blog](https://regilero.github.io/english/security/2019/10/17/security_apache_traffic_server_http_smuggling/).
 - There are 3+ ways to exploit this.
 - The guest book is the only way to get data back.
 - Use Burp. You may need to disable `Content-length` auto update at some point (depends on the approach).
 - The second request should be POST request into the guestbook.
 - Send the request few times and see the quest book if you caught something.
+
+## 5: Security Misconfiguration
+### Debug Mode
+- Search for `Flusk debug mode RCE`.
+- Enjoy your Python shell, it's not hard to create a file now.
+
+### Directory Listing
+- I expect you know what directory listing is.
+- Look through both the `/api` and `/backend` files, one of them is the one.
+
+### XML External Entities
+- Exactly the same as the prerequisite.
 
