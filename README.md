@@ -1,6 +1,14 @@
 # OWASP Range force hints
-The hints are provided with no warranty. Also don't fire any issues, they will be ignored,
-just ask you friends.
+
+The hints are provided with no warranty. Also don't fire any issues, they will
+be ignored, just ask your friends. I don't have to care anymore. Don't forget
+to star if you found this useful. PR may be accepted.
+
+Before you start do as many other modules.
+These OWASP challenges require previous knowledge of both "hacking" and Unix/Linux.
+This hints also expect that you have at least basic knowledge.
+
+Good luck and have fun.
 
 ## 1: Broken Access Control
 ### Path Traversal
@@ -47,7 +55,7 @@ just ask you friends.
 - Now open the website and find when are the credentials sent (Firefox recommended).
 - They are sent on the resolve button press.
 - We need to get `npm` working.
-- Clone the project from Github. Go into the backend folder.
+- Clone the project from GitHub. Go into the backend folder.
 - Install hapi and iron - `npm install hapi iron`.
 - Place your code into `server.js`. This way you don't have to deal with `npm`.
 - Place the code right under the `init()` function declaration.
