@@ -88,3 +88,25 @@ just ask you friends.
 - What is a possible name of table with data about *users*? What can be the column name for *password*s?
 - It depends on the order and number of columns selected.
 
+
+## 4: Insecure Design
+### Unrestricted File Upload
+- You can upload any files.
+- We can make a guess that the website is written in PHP.
+- Try uploading some PHP web shell (find some on the internet) and view the uploaded file.
+
+### Exposed Credentials
+- Use Firefox of Burp, we need to edit requests.
+- See how does request done by the spellchecker look like.
+- Let's try querying different collection.
+- You can delete some query parameters.
+
+### HTTP Request Smuggling
+- Read on the net what it actually is.
+- [Blog](https://kleiber.me/blog/2021/10/31/python-flask-jinja2-ssti-example/)
+- There are 3+ ways to exploit this.
+- The guest book is the only way to get data back.
+- Use Burp. You may need to disable `Content-length` auto update at some point (depends on the approach).
+- The second request should be POST request into the guestbook.
+- Send the request few times and see the quest book if you caught something.
+
