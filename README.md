@@ -164,3 +164,27 @@ Good luck and have fun.
 - Image letting admin log with your session cookie.
 - Image setting cookie with `NAME=value`.
 
+## 8: Software and Data Integrity Failures
+### Remote File Inclusion
+- The page loads whatever URL you give it.
+- If the file is PHP, it even gets executed.
+- Would be pity if you crafted a file that executes some command when loaded by PHP.
+- You can share it with `puthon -m http.server 80`
+
+### Insecure Deserialization
+- First try to find what is the difference between dark and light mode requests.
+- Yes, a new cookie appeared.
+- Try to guess/discover the language the server is written in.
+- The language is Python.
+- Try to find what is the most popular Python object serialization library.
+- It's pickle. Try to find online how to abuse it.
+- You want to abuse the `__reduce__` function.
+
+### Code Download Without Integrity Check
+- You can easily see how can the management download the unsecure code.
+- The router is secure, no change of succeeding there.
+- Is there a way how you would become 192.168.6.2?
+- Did you ever hear of ARP?
+- The answer is ARP spoofing. Set you ip address and use `aprspoof` command.
+- Run your own https file server (search on web).
+
