@@ -144,6 +144,23 @@ Good luck and have fun.
 ### Log4Shell
 - See the prerequisite first.
 - You will need to install `maven` to compile `rogue-jndi`.
-- I used `msfconsole` to deliver malicious payload, search online. It should work also without, idk.
+- I used `msfconsole` to deliver malicious payload, search online. It should work also without, I guess.
 - The home page is not vulnerable, you have to use another.
+
+## 7: Identification and Authentication Failures
+### Missing Authentication for Critical Function
+- Just list then all, they don't check it even though they proclaim it.
+
+### Brute Forcing
+- Start with creating your own account.
+- Is the password the only thing you can brute force?
+- You can either write a simple python script, or use generate wordlist with numbers and use hydra.
+- Make sure you are using right words/spelling and port.
+
+### Session Fixation
+- Image the server admin clicks on every link you send him.
+- Image you are totally stupid developer.
+- Image you decide that URL params can override your cookies.
+- Image letting admin log with your session cookie.
+- Image setting cookie with `NAME=value`.
 
