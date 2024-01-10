@@ -130,3 +130,20 @@ Good luck and have fun.
 ### XML External Entities
 - Exactly the same as the prerequisite.
 
+## 6: Vulnerable and Outdated Components
+### Vulnerable Component
+- Run `nmap -sV --script=vulners.nse target`.
+- Find exploit on port 80 with RCE.
+- Use `msfconsole` to exploit it.
+
+### Backdoored Component
+- The backend server may be outdated.
+- Look at the PHP version used.
+- Find how to exploit the specific PHP version on internet (GitHub).
+
+### Log4Shell
+- See the prerequisite first.
+- You will need to install `maven` to compile `rogue-jndi`.
+- I used `msfconsole` to deliver malicious payload, search online. It should work also without, idk.
+- The home page is not vulnerable, you have to use another.
+
