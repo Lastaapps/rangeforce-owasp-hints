@@ -188,3 +188,18 @@ Good luck and have fun.
 - The answer is ARP spoofing. Set you ip address and use `aprspoof` command.
 - Run your own https file server (search on web).
 
+## 9: Security Logging and Monitoring Failures
+### Sensitive Information in Log File
+- See blue button page.
+- This is really trivial path traversal.
+
+### Log Forging
+- You can guess the first part.
+- Use `host=server` to view all the relevant logs.
+- Copy one result from Spunk and edit it little.
+
+### Sensitive Information in Log File
+- ../../../../../
+- Use gobuster in the dir or fuzz mode.
+- The file extension is `.log`.
+
