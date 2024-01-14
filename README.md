@@ -1,16 +1,21 @@
 # OWASP Range force hints
 
-The hints are provided with no warranty. Also don't fire any issues, they will
-be ignored, just ask your friends. I don't have to care anymore. Don't forget
-to star if you found this useful. PR may be accepted.
+The hints are provided with no warranty, they will not be updated (by me) and
+may top working after some time. Also, don't fire any issues, they will be
+ignored, just ask your classmates. I don't have to care anymore. Don't forget
+to star if you found this useful. PR with updates may be accepted (hints only,
+not complete solutions).
 
-Before you start do as many other modules.
-These OWASP challenges require previous knowledge of both "hacking" and Unix/Linux.
-This hints also expect that you have at least basic knowledge.
+Before you start do as many other modules. These OWASP challenges require good
+previous knowledge of both "hacking" and Unix/Linux. This hints also expect
+that you have at least basic knowledge/experience.
 
 Good luck and have fun.
 
+
+
 ## 1: Broken Access Control
+
 ### Path Traversal
 - Go to the website.
 - Locate the page, where files are loaded by their name (look into the URL).
@@ -40,7 +45,9 @@ Good luck and have fun.
 - You found the file, just access it in the browser now.
 
 
+
 ## 2: Cryptographic Failures
+
 ### Use of Weak Hash
 - Open the PhpMyAdmin and look through the database.
 - Look for the table with user password hashes.
@@ -71,7 +78,10 @@ Good luck and have fun.
 - You can use python requests library to do the request, check for status code 200.
 - It should take about 20s to find the right session cookie.
 
+
+
 ## 3: Injection
+
 ### Command Injection
 - See prerequisites first. This one is really trivial.
 - On Unix systems `;` can be used to separate commands.
@@ -82,22 +92,27 @@ Good luck and have fun.
 ### Template Injection
 - Open the web and locate field that returns/processes something.
 - It's the shipping field.
-- Try editing the URL part with the search query. Input some random data and see the error message. Try to guess the language the server is written in.
+- Try editing the URL part with the search query. Input some random data and
+  see the error message. Try to guess the language the server is written in.
 - Web seems to be written using Python.
 - One of the most common Python template library is Jinja2.
 - Search on the web for Jinja2 template injection.
-- [Possible solution, not the best one](https://kleiber.me/blog/2021/10/31/python-flask-jinja2-ssti-example/).
+- [Possible solution, not the best
+  one](https://kleiber.me/blog/2021/10/31/python-flask-jinja2-ssti-example/).
 
 ### Second-Order SQL Injection
 - See prerequisites first.
 - Try to play with `;` while creating account and login in.
 - You can discover that SQL injection is hidden inside the `username` field.
 - Construct the `union select` query showing the data.
-- What is a possible name of table with data about *users*? What can be the column name for *password*s?
+- What is a possible name of table with data about *users*? What can be the
+  column name for *password*s?
 - It depends on the order and number of columns selected.
 
 
+
 ## 4: Insecure Design
+
 ### Unrestricted File Upload
 - You can upload any files.
 - We can make a guess that the website is written in PHP.
@@ -114,11 +129,15 @@ Good luck and have fun.
 - [Blog](https://regilero.github.io/english/security/2019/10/17/security_apache_traffic_server_http_smuggling/).
 - There are 3+ ways to exploit this.
 - The guest book is the only way to get data back.
-- Use Burp. You may need to disable `Content-length` auto update at some point (depends on the approach).
+- Use Burp. You may need to disable `Content-length` auto update at some point
+  (depends on the approach).
 - The second request should be POST request into the guestbook.
 - Send the request few times and see the quest book if you caught something.
 
+
+
 ## 5: Security Misconfiguration
+
 ### Debug Mode
 - Search for `Flusk debug mode RCE`.
 - Enjoy your Python shell, it's not hard to create a file now.
@@ -130,7 +149,10 @@ Good luck and have fun.
 ### XML External Entities
 - Exactly the same as the prerequisite.
 
+
+
 ## 6: Vulnerable and Outdated Components
+
 ### Vulnerable Component
 - Run `nmap -sV --script=vulners.nse target`.
 - Find exploit on port 80 with RCE.
@@ -144,17 +166,22 @@ Good luck and have fun.
 ### Log4Shell
 - See the prerequisite first.
 - You will need to install `maven` to compile `rogue-jndi`.
-- I used `msfconsole` to deliver malicious payload, search online. It should work also without, I guess.
+- I used `msfconsole` to deliver malicious payload, search online. It should
+  work also without, I guess.
 - The home page is not vulnerable, you have to use another.
 
+
+
 ## 7: Identification and Authentication Failures
+
 ### Missing Authentication for Critical Function
 - Just list then all, they don't check it even though they proclaim it.
 
 ### Brute Forcing
 - Start with creating your own account.
 - Is the password the only thing you can brute force?
-- You can either write a simple python script, or use generate wordlist with numbers and use hydra.
+- You can either write a simple python script, or use generate wordlist with
+  numbers and use hydra.
 - Make sure you are using right words/spelling and port.
 
 ### Session Fixation
@@ -164,15 +191,20 @@ Good luck and have fun.
 - Image letting admin log with your session cookie.
 - Image setting cookie with `NAME=value`.
 
+
+
 ## 8: Software and Data Integrity Failures
+
 ### Remote File Inclusion
 - The page loads whatever URL you give it.
 - If the file is PHP, it even gets executed.
-- Would be pity if you crafted a file that executes some command when loaded by PHP.
+- Would be pity if you crafted a file that executes some command when loaded by
+  PHP.
 - You can share it with `puthon -m http.server 80`
 
 ### Insecure Deserialization
-- First try to find what is the difference between dark and light mode requests.
+- First try to find what is the difference between dark and light mode
+  requests.
 - Yes, a new cookie appeared.
 - Try to guess/discover the language the server is written in.
 - The language is Python.
@@ -188,7 +220,10 @@ Good luck and have fun.
 - The answer is ARP spoofing. Set you ip address and use `aprspoof` command.
 - Run your own https file server (search on web).
 
+
+
 ## 9: Security Logging and Monitoring Failures
+
 ### Sensitive Information in Log File
 - See blue button page.
 - This is really trivial path traversal.
