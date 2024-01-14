@@ -203,3 +203,27 @@ Good luck and have fun.
 - Use gobuster in the dir or fuzz mode.
 - The file extension is `.log`.
 
+
+
+## 10: Server-Side Request Forgery
+
+### Server-Side Request Forgery
+- Just write a simple script in python/script, that sends the same request as
+  the web page.
+- The script can be just simple for loop with curl inside.
+- You want to access `http://localhost:{port_number}`.
+- Try ports in range 1-100.
+
+### AWS Metadata SSRF
+- Do the prerequisite first (and keep it opened).
+- See where you can enter some kind of URL.
+- Maybe the web hooks module could be exploited.
+
+### SSRF Insecure Allowlist Bypass
+- You were given another domain - try visiting it.
+- Register your own domain.
+- It would be beneficial for the domain to point to `localhost` (`127.0.0.1`).
+- If you managed to register there a subdomain of `commensuratetechnology.com`,
+  you would bypass the checks.
+- The domain google.com and GOOGLE.COM
+
